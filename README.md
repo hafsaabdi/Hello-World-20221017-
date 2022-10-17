@@ -3,7 +3,7 @@ Cs 10 lessons
 
 ---
 
-lesson summary
+* lesson summary
 -
 
 ---
