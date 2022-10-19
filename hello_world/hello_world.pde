@@ -13,16 +13,21 @@ void setup() {
  println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
  //
  //Ternary Operator
- String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="bru, turn your phone";
- String orientation = ( appWidth >= appHeight ) ? ls : p;
- println (DO, orientation);
+ //String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="bru, turn your phone";
+ //String orientation = ( appWidth >= appHeight ) ? ls : p;
+ //println (DO, orientation);
+ if( appWidth < appHeight ) {//Declare Landscape Mode
+  println(instruct);
+ } else {
+  if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
+ if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
+ }
  //
  //If OREINTATION is wrong ... feedback to change it
- if (orientation==p) println(instruct);
+ //if (orientation==p) println(instruct);
  //
  //Fit CANVAS into Display Monitor
- if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
- if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
+
  if (appWidth != 0 && appHeight != 0)print("Display Geometry is Good to GO.");
  if (appWidth == 0 || appHeight == 0)println("STOP, is broken");
 }//End setup
