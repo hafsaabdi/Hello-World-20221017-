@@ -14,7 +14,7 @@ void setup() {
  //
  //Ternary Operator
  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="bru, turn your phone";
- String orientation = ( width >= height ) ? ls : p;
+ String orientation = ( appWidth >= appHeight ) ? ls : p;
  println (DO, orientation);
  //
  //If OREINTATION is wrong ... feedback to change it
