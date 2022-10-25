@@ -2,46 +2,39 @@
 int appWidth, appHeight;
 //
 void setup() {
-  //Declare Display Geometry: square, landscape, portrait
-  size(700, 400); //Use size for debugging
-  //fullScreen(); //Use fullScreen for easy deployment
+  //Declaring Display Geometry: landscape, square, portrait
+  size(700, 400); //Able to deploy with fullScreen();
+  //fullScreen();
   appWidth = width;
   appHeight = height;
+  //Concatenation: , or + (i.e space)
+  println("\t\t\tWidth="+width, "\tHeight="+height);
+  println("Display Monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
   //
-  //concatenation
-  println("\t\t\tWidth ="+width, "\tHeight="+height);//key variables
-  println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
   //
-  //Ternary Operator
-  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="bru, turn your phone";
-  //String orientation = ( appWidth >= appHeight ) ? ls : p;
-  //println (DO, orientation);
-  if( appWidth < appHeight ) {//Declare Landscape Mode
-  println(instruct);
+  if ( appWidth < appHeight ) { //Declaring Landscape & square
+    println(instruct);
   } else {
-   //Fit CANVAS into Display Monitor
-  if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
-  if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
-  if (appWidth != 0 && appHeight != 0 ) {
-    print("Display Geometry is Good to GO.");
-   } else {
-     println("STOP, is broken");
-   }
+    println("Display: Good to Go");
+    if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display
+      appWidth=0;
+      appHeight=0;
+      println("STOP, is broken");
+    } else {
+      //Empty ELSE
+    }
   }
-  //
-  //If OREINTATION is wrong ... feedback to change it
-  //if (orientation==p) println(instruct);
-  //
- }//End setup
- //
- void draw() {
-rect (xStart, yStart, widthRect, heightRect, );
-}//End draw
- //
- void keyPressed() {
- } //End keyPressed
- //
- void mousePressed() {
- } //End mousePressed
- //
- // End Main Program
+} //End setup
+//
+void draw() {
+  ellipse(50, 100, 10, 120);
+} //End draw
+//
+void keyPressed() {
+} //End keyPressed
+//
+void mousePressed() {
+} //End mousePressed
+//
+// End Main Program
