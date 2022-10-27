@@ -32,17 +32,10 @@ void setup() {
   //If ORIENTATION is wrong ... feedback to change it
   //if ( orientation==p ) println(instruct);
   //
-  //Population
-  centerWidth = appWidth * 1/2;
-  centerHeight = appHeight * 1/2;
-  xStart = centerWidth - ( appWidth * 1/4;);
-  yStart = centerHeight - ( appHeight * 1/4);;
-  widthRect=;
-  heightRect=;
 } //End setup
 //
 void draw() {
-  rect(xStart, yStart, widthRect, heightRect);
+  ellipse(150, 20, 10, 30);
 } //End draw
 //
 void keyPressed() {
