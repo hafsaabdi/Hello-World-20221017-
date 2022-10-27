@@ -1,7 +1,7 @@
 //Global Variables
 int appWidth, appHeight;
 float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
-color black=#000000, white=#FFFFFF;
+color black=#000000, white=#FFFFFF; puple=#FA00F6, yellow=#F8FC64
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
@@ -50,6 +50,7 @@ void draw() {
   //Night Mode
   background(black);
   //
+  stroke(yellow);
   fill(purple);
   rect(xStart, yStart, widthRect, heightRect);
   fill(white);// Reset default
