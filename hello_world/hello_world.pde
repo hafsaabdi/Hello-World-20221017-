@@ -2,33 +2,58 @@
 int appWidth, appHeight;
 //
 void setup() {
-  //Declaring Display Geometry: landscape, square, portrait
-  size(700, 400); //Able to deploy with fullScreen();
-  //fullScreen();
+  //Declare Display Geometry: square, landscape, portrait
+  size(700, 400); //Use size for debugging
+  //fullScreen(); //Use fullScreen for easy deployment
   appWidth = width;
   appHeight = height;
-  //Concatenation: , or + (i.e space)
-  println("\t\t\tWidth="+width, "\tHeight="+height);
-  println("Display Monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
   //
+  //Concatenation
+  println("\t\t\tWidth="+width, "\tHeight="+height); //key variables
+  println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
+  //
+  //Ternary Operator
   String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
+  //String orientation = ( appWidth >= appHeight ) ? ls : p;
+  //println (DO, orientation);
+//Global Variables
+int appWidth, appHeight;
+//
+void setup() {
+  //Declare Display Geometry: square, landscape, portrait
+  size(700, 400); //Use size for debugging
+  //fullScreen(); //Use fullScreen for easy deployment
+  appWidth = width;
+  appHeight = height;
   //
-  if ( appWidth < appHeight ) { //Declaring Landscape & square
+  //Concatenation
+  println("\t\t\tWidth="+width, "\tHeight="+height); //key variables
+  println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
+  //
+  //Ternary Operator
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
+  //String orientation = ( appWidth >= appHeight ) ? ls : p;
+  //println (DO, orientation);
+  if ( appWidth < appHeight ) { //Declare Landscape Mode
     println(instruct);
   } else {
-    println("Display: Good to Go");
-    if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display
-      appWidth=0;
-      appHeight=0;
-      println("STOP, is broken");
+    //Fit CANVAS into Display Monitor
+    if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
+    if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
+    if ( appWidth != 0 && appHeight != 0 ) {
+      print("Display Geoemtry is Good to Go.");
     } else {
-      //Empty ELSE
+      println("STOP, is broken");
     }
   }
+  //
+  //If ORIENTATION is wrong ... feedback to change it
+  //if ( orientation==p ) println(instruct);
+  //
 } //End setup
 //
 void draw() {
-  ellipse(50, 100, 10, 120);
+  rect();
 } //End draw
 //
 void keyPressed() {
