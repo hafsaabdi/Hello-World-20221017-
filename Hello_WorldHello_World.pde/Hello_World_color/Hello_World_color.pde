@@ -4,6 +4,7 @@ float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
 color black=#000000, white=#FFFFFF, purple=#FA00F6, yellow=#F8FC64;
 color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;
 float thick, thin;
+Boolean grayScale=false, randomColour=false, blackBackground=false, nightMode=false;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
@@ -73,6 +74,9 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
+  if ( key=='A' || key=='a' ) grayScale = true;
+  if ( key=='S' || key=='s' ) randomColour = true;
+  if ( key=='W' || key=='w' ) blackBackground = true;
 } //End keyPressed
 //
 void mousePressed() {
