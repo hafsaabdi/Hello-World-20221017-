@@ -53,12 +53,13 @@ void draw() {
   //random(a, b)
   if ( randomColour == true ) background( color( random(0, 255), random(255), random(255) ) ); //color(r,g,b), Casting 
   //Night Mode
-  if ( blackBackground == true ) background(black);
+  
   //
   strokeWeight(thick); //noStroke()
   //Night Mode Decision
   if ( nightMode == true )
   {
+    if ( blackBackground == true ) background(black);
     stroke(yellowNightMode);
     fill(purpleNightMode);
   } else
